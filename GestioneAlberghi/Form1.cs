@@ -50,7 +50,7 @@ namespace GestioneAlberghi
                 nuovastanza.numero = int.Parse(textnum_creazione.Text);
                 nuovastanza.posti = int.Parse(textposti_creazione.Text);
                 nuovastanza.costo = decimal.Parse(textcosto_creazione.Text);
-                if (comboBox1.Text == "Occupato")
+                if (comboBox1.Text == "Occupata")
                 {
                     nuovastanza.stato = false;
                 }
