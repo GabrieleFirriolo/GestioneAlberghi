@@ -142,7 +142,7 @@ namespace GestioneAlberghi
                 y = x + 1;
                 while (n > y)
                 {
-                    if (string.Compare(elep[x].stato.ToString() , elep[y].stato.ToString())>0)
+                    if (string.Compare(elep[x].stato.ToString() , elep[y].stato.ToString())<0)
                     {
                         k = elep[x];
                         elep[x] = elep[y];
@@ -156,7 +156,7 @@ namespace GestioneAlberghi
 
        
 
-        public static int elimina(stanza[] elep, ref int n, int cod)
+        public static int elimina(stanza[] elep, ref int n, string cod)
         {
             int x = default(int);
 
@@ -164,7 +164,7 @@ namespace GestioneAlberghi
             x = 0;
             while (x < n)
             {
-                if (elep[x].numero == cod) 
+                if (elep[x].numero.ToString() == cod)
                 {
 
                     elep[x] = elep[n - 1];

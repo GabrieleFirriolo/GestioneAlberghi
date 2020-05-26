@@ -51,7 +51,7 @@ namespace GestioneAlberghi
                 textnum_creazione.Clear();
                 textposti_creazione.Clear();
                 textcosto_creazione.Clear();
-                comboBox1.Refresh();
+
                 MessageBox.Show("Stanza inserita");
             }
             catch
@@ -60,7 +60,7 @@ namespace GestioneAlberghi
                 textnum_creazione.Clear();
                 textposti_creazione.Clear();
                 textcosto_creazione.Clear();
-                comboBox1.Refresh();
+                comboBox1.Text = "";
             }
         }
 
@@ -93,6 +93,22 @@ namespace GestioneAlberghi
                     var row = new string[] { elestanze[x].numero.ToString(), elestanze[x].posti.ToString(), elestanze[x].costo.ToString(), elestanze[x].stato.ToString() };
                     var listrow = new ListViewItem(row);
                     listView2.Items.Add(listrow);
+                    x = x + 1;
+                }
+            }
+
+            if (tabControl1.SelectedIndex == 4)
+            {
+                int x = default(int);
+                listView3.Items.Clear();
+                while (x < num)
+                {
+                    if (elestanze[x].stato == true)
+                    {
+                        var row = new string[] { elestanze[x].numero.ToString(), elestanze[x].posti.ToString(), elestanze[x].costo.ToString(), elestanze[x].stato.ToString() };
+                        var listrow = new ListViewItem(row);
+                        listView3.Items.Add(listrow);
+                    }
                     x = x + 1;
                 }
             }
@@ -179,38 +195,165 @@ namespace GestioneAlberghi
                 {
                     z = Class1.Cerca1(elestanze, num, listView2.SelectedItems[0].SubItems[0].Text);
                 }
-                nuovastanza.numero = int.Parse(textnum_creazione.Text);
-                nuovastanza.posti = int.Parse(textposti_creazione.Text);
-                nuovastanza.costo = decimal.Parse(textcosto_creazione.Text);
-                if (comboBox1.Text == "Occupato")
+                nuovastanza.numero = int.Parse(textnum_modifica.Text);
+                nuovastanza.posti = int.Parse(textposti_modifica.Text);
+                nuovastanza.costo = decimal.Parse(textcosto_modifica.Text);
+                if (comboBox2.Text == "Occupato")
                 {
                     nuovastanza.stato = false;
                 }
-                if (comboBox1.Text == "Libera")
+                if (comboBox2.Text == "Libera")
                 {
                     nuovastanza.stato = true;
                 }
 
-                elestanze[num] = nuovastanza;
-                num++;
+                elestanze[z] = nuovastanza;
 
-                textnum_creazione.Clear();
-                textposti_creazione.Clear();
-                textcosto_creazione.Clear();
-                comboBox1.Refresh();
-                MessageBox.Show("Stanza inserita");
+
+                textnum_modifica.Clear();
+                textposti_modifica.Clear();
+                textcosto_modifica.Clear();
+
+                MessageBox.Show("Stanza modificata");
+                int x = default(int);
+                listView2.Items.Clear();
+                while (x < num)
+                {
+                    var row = new string[] { elestanze[x].numero.ToString(), elestanze[x].posti.ToString(), elestanze[x].costo.ToString(), elestanze[x].stato.ToString() };
+                    var listrow = new ListViewItem(row);
+                    listView2.Items.Add(listrow);
+                    x = x + 1;
+                }
+            }
+            catch
+            {
+                textnum_modifica.Clear();
+                textposti_modifica.Clear();
+                textcosto_modifica.Clear();
+
+                MessageBox.Show("Stanza non modificata, controllare i valori immessi");
+                int x = default(int);
+                listView2.Items.Clear();
+                while (x < num)
+                {
+                    var row = new string[] { elestanze[x].numero.ToString(), elestanze[x].posti.ToString(), elestanze[x].costo.ToString(), elestanze[x].stato.ToString() };
+                    var listrow = new ListViewItem(row);
+                    listView2.Items.Add(listrow);
+                    x = x + 1;
+                }
+            }
+
+
+        }
+
+        private void butelimina_modifica_Click(object sender, EventArgs e)
+        {
+            int q = default(int);
+            string cod = default(string);
+
+            cod = textnum_modifica.Text;
+            q = Class1.elimina(elestanze, ref num, cod);
+            if (q > 0)
+            {
+                MessageBox.Show("Hai eliminato " + q + " stanze");
+            }
+
+
+            textnum_modifica.Clear();
+            textposti_modifica.Clear();
+            textcosto_modifica.Clear();
+
+
+            int x = default(int);
+            listView2.Items.Clear();
+            while (x < num)
+            {
+                var row = new string[] { elestanze[x].numero.ToString(), elestanze[x].posti.ToString(), elestanze[x].costo.ToString(), elestanze[x].stato.ToString() };
+                var listrow = new ListViewItem(row);
+                listView2.Items.Add(listrow);
+                x = x + 1;
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string p = default(string);
+            p = "ArchivioGestioneAlbergo.txt";
+            Class1.salva(elestanze, num, p);
+            MessageBox.Show("Hai salvato");
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listView3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int z = default;
+                int k = listView3.SelectedIndices.Count;
+                if (k != 0)
+                {
+                    z = Class1.Cerca1(elestanze, num, listView3.SelectedItems[0].SubItems[0].Text);
+                }
+
+                label14.Text = elestanze[z].numero.ToString();
+                label16.Text= elestanze[z].costo.ToString();
+                textBox1.Enabled = true;
             }
             catch
             {
 
             }
-
-            
         }
 
-        private void butelimina_modifica_Click(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            try
+            {
+                label19.Text = (int.Parse(textBox1.Text) * int.Parse(label16.Text)).ToString();
+            }
+            catch 
+            {
+                if(textBox1.Text!="")
+                {
+                    MessageBox.Show("Non hai inserito un numero");
+                    textBox1.Clear();
+                }
+               
+            }
+        }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int z = default;
+            int k = listView3.SelectedIndices.Count;
+            if (k != 0)
+            {
+                z = Class1.Cerca1(elestanze, num, listView3.SelectedItems[0].SubItems[0].Text);
+            }
+
+            elestanze[z].stato = false;
+            MessageBox.Show("Stanza prenotata");
+            int x = default(int);
+            listView3.Items.Clear();
+            while (x < num)
+            {
+                if (elestanze[x].stato==true)
+                {
+                    var row = new string[] { elestanze[x].numero.ToString(), elestanze[x].posti.ToString(), elestanze[x].costo.ToString(), elestanze[x].stato.ToString() };
+                    var listrow = new ListViewItem(row);
+                    listView3.Items.Add(listrow);
+                }
+                x = x + 1;
+            }
         }
     }
 }
