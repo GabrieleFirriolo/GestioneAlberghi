@@ -32,7 +32,9 @@ namespace GestioneAlberghi
         private void butadd_creazione_Click(object sender, EventArgs e)
         {
             stanza nuovastanza = default;
-            int f = Class1.Cerca1(elestanze, num, textnum_creazione.Text);
+            
+        
+        int f = Class1.Cerca1(elestanze, num, textnum_creazione.Text);
             if (f!=-1)
             {
                 MessageBox.Show("Numero stanza già usato");
@@ -224,11 +226,11 @@ namespace GestioneAlberghi
                 textcosto_modifica.Text = elestanze[z].costo.ToString();
                 if (elestanze[z].stato == true)
                 {
-                    comboBox2.Text = "Libera";
+                    comboBox2.SelectedText = "Libera";
                 }
                 if (elestanze[z].stato == false)
                 {
-                    comboBox2.Text = "Occupata";
+                    comboBox2.SelectedText = "Occupata";
                 }
             }
             catch
