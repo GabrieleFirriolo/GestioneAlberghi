@@ -57,7 +57,6 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.butelimina_modifica = new System.Windows.Forms.Button();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -77,6 +76,7 @@
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.button3 = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -93,7 +93,7 @@
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -104,8 +104,8 @@
             this.panel5.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -387,8 +387,8 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.DarkViolet;
+            this.panel3.Controls.Add(this.textBox2);
             this.panel3.Controls.Add(this.butelimina_modifica);
-            this.panel3.Controls.Add(this.comboBox3);
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.label11);
             this.panel3.Controls.Add(this.label12);
@@ -417,17 +417,6 @@
             this.butelimina_modifica.Text = "Elimina";
             this.butelimina_modifica.UseVisualStyleBackColor = false;
             this.butelimina_modifica.Click += new System.EventHandler(this.butelimina_modifica_Click);
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "Libera",
-            "Occupata"});
-            this.comboBox3.Location = new System.Drawing.Point(65, 197);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(173, 24);
-            this.comboBox3.TabIndex = 13;
             // 
             // label10
             // 
@@ -611,6 +600,24 @@
             this.tabPage4.Text = "PRENOTAZIONE";
             this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.DarkViolet;
+            this.panel4.Controls.Add(this.button2);
+            this.panel4.Controls.Add(this.label19);
+            this.panel4.Controls.Add(this.label18);
+            this.panel4.Controls.Add(this.textBox1);
+            this.panel4.Controls.Add(this.label17);
+            this.panel4.Controls.Add(this.label16);
+            this.panel4.Controls.Add(this.label15);
+            this.panel4.Controls.Add(this.label14);
+            this.panel4.Controls.Add(this.label9);
+            this.panel4.Location = new System.Drawing.Point(6, 6);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(259, 327);
+            this.panel4.TabIndex = 13;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.Desktop;
@@ -757,23 +764,12 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
-            // panel4
+            // textBox2
             // 
-            this.panel4.BackColor = System.Drawing.Color.DarkViolet;
-            this.panel4.Controls.Add(this.button2);
-            this.panel4.Controls.Add(this.label19);
-            this.panel4.Controls.Add(this.label18);
-            this.panel4.Controls.Add(this.textBox1);
-            this.panel4.Controls.Add(this.label17);
-            this.panel4.Controls.Add(this.label16);
-            this.panel4.Controls.Add(this.label15);
-            this.panel4.Controls.Add(this.label14);
-            this.panel4.Controls.Add(this.label9);
-            this.panel4.Location = new System.Drawing.Point(6, 6);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(259, 327);
-            this.panel4.TabIndex = 13;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            this.textBox2.Location = new System.Drawing.Point(65, 197);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(170, 22);
+            this.textBox2.TabIndex = 16;
             // 
             // Form1
             // 
@@ -804,9 +800,9 @@
             this.panel5.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -859,7 +855,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel8;
@@ -881,6 +876,7 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }
 
