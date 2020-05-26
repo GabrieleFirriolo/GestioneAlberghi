@@ -457,5 +457,10 @@ namespace GestioneAlberghi
                 x = x + 1;
             }
         }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
