@@ -49,11 +49,14 @@
             this.Costo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Stato = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.panel9 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.butelimina_modifica = new System.Windows.Forms.Button();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -63,6 +66,7 @@
             this.textposti_modifica = new System.Windows.Forms.TextBox();
             this.textnum_modifica = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.butrel_modifica = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.listView2 = new System.Windows.Forms.ListView();
@@ -83,9 +87,6 @@
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.button3 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -308,7 +309,14 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(235, 319);
             this.panel2.TabIndex = 0;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel7.Location = new System.Drawing.Point(-2, 98);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(238, 148);
+            this.panel7.TabIndex = 4;
             // 
             // button1
             // 
@@ -362,9 +370,18 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "MODIFICA";
             // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel9.Location = new System.Drawing.Point(2, 235);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(247, 10);
+            this.panel9.TabIndex = 14;
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.DarkViolet;
+            this.panel3.Controls.Add(this.butelimina_modifica);
             this.panel3.Controls.Add(this.comboBox3);
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.label11);
@@ -380,6 +397,20 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(242, 316);
             this.panel3.TabIndex = 3;
+            // 
+            // butelimina_modifica
+            // 
+            this.butelimina_modifica.BackColor = System.Drawing.Color.Black;
+            this.butelimina_modifica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butelimina_modifica.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butelimina_modifica.ForeColor = System.Drawing.Color.DarkViolet;
+            this.butelimina_modifica.Location = new System.Drawing.Point(126, 243);
+            this.butelimina_modifica.Name = "butelimina_modifica";
+            this.butelimina_modifica.Size = new System.Drawing.Size(112, 70);
+            this.butelimina_modifica.TabIndex = 15;
+            this.butelimina_modifica.Text = "Elimina";
+            this.butelimina_modifica.UseVisualStyleBackColor = false;
+            this.butelimina_modifica.Click += new System.EventHandler(this.butelimina_modifica_Click);
             // 
             // comboBox3
             // 
@@ -442,7 +473,6 @@
             this.textcosto_modifica.Name = "textcosto_modifica";
             this.textcosto_modifica.Size = new System.Drawing.Size(173, 22);
             this.textcosto_modifica.TabIndex = 5;
-            this.textcosto_modifica.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textposti_modifica
             // 
@@ -467,15 +497,23 @@
             this.panel5.Size = new System.Drawing.Size(242, 10);
             this.panel5.TabIndex = 2;
             // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel8.Location = new System.Drawing.Point(0, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(243, 10);
+            this.panel8.TabIndex = 3;
+            // 
             // butrel_modifica
             // 
             this.butrel_modifica.BackColor = System.Drawing.Color.Black;
             this.butrel_modifica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.butrel_modifica.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butrel_modifica.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butrel_modifica.ForeColor = System.Drawing.Color.DarkViolet;
             this.butrel_modifica.Location = new System.Drawing.Point(3, 243);
             this.butrel_modifica.Name = "butrel_modifica";
-            this.butrel_modifica.Size = new System.Drawing.Size(235, 70);
+            this.butrel_modifica.Size = new System.Drawing.Size(118, 70);
             this.butrel_modifica.TabIndex = 1;
             this.butrel_modifica.Text = "Modifica";
             this.butrel_modifica.UseVisualStyleBackColor = false;
@@ -490,7 +528,6 @@
             this.label8.Size = new System.Drawing.Size(195, 25);
             this.label8.TabIndex = 0;
             this.label8.Text = "Modifica Stanza :";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // listView2
             // 
@@ -658,30 +695,6 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "GESTIONALE ALBERGHI";
             // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel7.Location = new System.Drawing.Point(-2, 98);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(238, 148);
-            this.panel7.TabIndex = 4;
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel8.Location = new System.Drawing.Point(0, 0);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(243, 10);
-            this.panel8.TabIndex = 3;
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel9.Location = new System.Drawing.Point(2, 235);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(247, 10);
-            this.panel9.TabIndex = 14;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -792,6 +805,7 @@
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button butelimina_modifica;
     }
 }
 
