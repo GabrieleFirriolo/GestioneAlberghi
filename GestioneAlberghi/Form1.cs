@@ -260,11 +260,11 @@ namespace GestioneAlberghi
                 nuovastanza.numero = int.Parse(textnum_modifica.Text);
                 nuovastanza.posti = int.Parse(textposti_modifica.Text);
                 nuovastanza.costo = decimal.Parse(textcosto_modifica.Text);
-                if (comboBox2.Text == "Occupata")
+                if (comboBox3.Text == "Occupata")
                 {
                     nuovastanza.stato = false;
                 }
-                if (comboBox2.Text == "Libera")
+                if (comboBox3.Text == "Libera")
                 {
                     nuovastanza.stato = true;
                 }
