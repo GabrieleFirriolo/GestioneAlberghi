@@ -262,26 +262,28 @@ namespace GestioneAlberghi
                 nuovastanza.numero = int.Parse(textnum_modifica.Text);
                 nuovastanza.posti = int.Parse(textposti_modifica.Text);
                 nuovastanza.costo = decimal.Parse(textcosto_modifica.Text);
-                string a = default;
-                a = textBox2.Text;
-                a.Trim();
-                a.ToLower();
-                if (textBox2.Text=="occupata")
+
+
+                if (textBox2.Text == "Occupata" || textBox2.Text == "Libera")
                 {
-                    nuovastanza.stato = false;
-                }
-                else
-                {
-                    if (textBox2.Text == "libera")
+                    if (textBox2.Text == "Occupata")
+                    {
+                        nuovastanza.stato = false;
+                    }
+
+                    if (textBox2.Text == "Libera")
                     {
                         nuovastanza.stato = true;
                     }
-                    else
-                    {
-                        MessageBox.Show("Inserisci Libera o Occupata in <Stato>");
-                    }
+                }else
+                {
+                    MessageBox.Show("Inserire Libera o Occupata in < Stato >");
+                    return;
                 }
-                
+
+
+
+
 
                 elestanze[z] = nuovastanza;
 
@@ -473,6 +475,11 @@ namespace GestioneAlberghi
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }
